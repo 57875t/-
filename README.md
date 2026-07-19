@@ -18,19 +18,29 @@ General-purpose AI chat tools are flexible but often lack reproducible workflows
 - report-quality evaluation;
 - human approval before consequential actions.
 
-## Current public baseline
+## Curated public baseline
 
-The public bundle contains curated milestone builds from **v1.0 through v1.9**, an evidence-production **v2.0** build, and the current **v2.4** rollback/candidate builds.
+The prepared public source bundle contains milestone builds from **v1.0 through v1.9**, an evidence-production **v2.0** build, and the current **v2.4** rollback/candidate builds.
 
-The historical sequence intentionally skips **v1.4** because no distinct accepted v1.4 artifact exists in the preserved project files. The repository does not invent a missing release.
+The historical sequence intentionally skips **v1.4** because no distinct accepted v1.4 artifact exists in the preserved project files. The project does not invent a missing release.
 
-Because the original prototypes are large self-contained HTML applications, the preserved source bundle is stored as split Base64 parts under `bundles/`. Reconstruct it with:
+The original prototypes are large self-contained HTML applications with substantial repeated code. They have therefore been sanitized and packed into a solid XZ archive:
 
-```bash
-python tools/reconstruct_bundle.py
+```text
+bundles/qr-desk-public-source-bundle.tar.xz
 ```
 
-The command creates `dist/qr-desk-public-source-bundle.zip`. Extract the archive and open any HTML milestone locally in a browser.
+After that binary archive is present, extract it with:
+
+```bash
+python tools/extract_bundle.py
+```
+
+Verified SHA-256:
+
+```text
+db9cf432da98cfb5b7f02adbee4b8573690a5289c90edd0c1799d55b105b70c5
+```
 
 ## Repository layout
 
@@ -44,12 +54,12 @@ The command creates `dist/qr-desk-public-source-bundle.zip`. Extract the archive
 ├── MANIFEST.md
 ├── bundles/
 │   ├── README.md
-│   └── qr-desk-public-source.zip.b64.part01 ...
+│   └── qr-desk-public-source-bundle.tar.xz
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   └── OPEN_SOURCE_SCOPE.md
 └── tools/
-    └── reconstruct_bundle.py
+    └── extract_bundle.py
 ```
 
 ## Safety and scope
@@ -62,7 +72,7 @@ QR Desk is **not** an autonomous trading bot and does not provide guaranteed inv
 - licensed datasets that cannot legally be redistributed;
 - automatic order execution or real-fund control.
 
-The preserved public bundle has been scanned and sanitized for obvious personal identifiers and credential-like demo strings. Placeholder credentials are not authentication mechanisms.
+The prepared public copies were scanned and sanitized for obvious personal identifiers and credential-like demo strings. Placeholder credentials are not authentication mechanisms.
 
 ## Development priorities
 

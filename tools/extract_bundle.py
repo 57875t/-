@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BUNDLE = ROOT / "bundles" / "qr-desk-public-source-bundle.tar.xz"
 OUTPUT = ROOT / "dist" / "qr-desk-public-source"
-EXPECTED_SHA256 = "50bd41e33b69a92ded23a2a28c51c5e584879e3790ecaf5d05974406c622ebdc"
+EXPECTED_SHA256 = "db9cf432da98cfb5b7f02adbee4b8573690a5289c90edd0c1799d55b105b70c5"
 
 
 def main() -> None:

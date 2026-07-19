@@ -1,0 +1,25 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Reconstructed bundles and local output
+dist/
+*.log
+*.tmp
+*.bak
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencies and build output
+node_modules/
+build/
+coverage/
